@@ -1,9 +1,12 @@
 # This file is copied to ~/spec when you run 'ruby script/generate rspec'
 # from the project root directory.
-ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] = 'test'
 require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
 require 'spec/autorun'
 require 'spec/rails'
+
+require 'webrat'
+require 'spec/stub_chain_mocha'
 
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
@@ -12,6 +15,8 @@ Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
+  
+  config.include Webrat::Matchers, :type => :views
 
   # == Fixtures
   #
@@ -37,7 +42,7 @@ Spec::Runner.configure do |config|
   # RSpec uses it's own mocking framework by default. If you prefer to
   # use mocha, flexmock or RR, uncomment the appropriate line:
   #
-  # config.mock_with :mocha
+  #config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
   #
@@ -45,3 +50,17 @@ Spec::Runner.configure do |config|
   # 
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
+
+# So stub_model works with mocha
+#module Spec
+#  module Rails
+#    module Mocks
+#      def add_stubs(object, stubs = {}) #:nodoc:
+#        m = [String, Symbol].index(object.class) ? mock(object.to_s) : object
+#        stubs.each {|k,v| m.stubs(k).returns(v)}
+#        m
+#      end
+#    end
+#  end
+#end
+
