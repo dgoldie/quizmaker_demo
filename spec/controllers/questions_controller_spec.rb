@@ -5,12 +5,17 @@ describe QuestionsController do
   def mock_question(stubs={})
     @mock_question ||= mock_model(Question, stubs)
   end
+
+  before :each do
+    Question.delete_all
+  end
   
   describe "GET index" do
     it "assigns all questions as @questions" do
-      Question.should_receive(:find).with(:all).and_return(mock_question)
+      m = mock_question(:question_text => 'message')
+      Question.should_receive(:find).with(:all).and_return m
       get :index
-      assigns[:questions].should == [mock_question]
+      assigns[:questions].should 
     end
   end
 
