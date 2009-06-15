@@ -80,10 +80,11 @@ describe User do
   end
 
   it "should not authenticate bad username" do
-    @user.attributes = valid_user_attributes
-    @user.save!
+    #@user.attributes = valid_user_attributes
+    @user = User.create!(valid_user_attributes)
     debugger
-    User.authenticate('nonexisting', 'secret').should be_nil
+    @find_user = User.authenticate('nonexisting', 'secret')
+    @find_user.should be_nil
   end
 
   it "should not authenticate bad password" do

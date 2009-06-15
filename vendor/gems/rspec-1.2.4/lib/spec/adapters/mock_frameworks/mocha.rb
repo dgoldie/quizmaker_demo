@@ -7,7 +7,6 @@ module Spec
     module MockFramework
       include Mocha::Standalone
       def setup_mocks_for_rspec
-        debugger
         mocha_setup
       end
       def verify_mocks_for_rspec
