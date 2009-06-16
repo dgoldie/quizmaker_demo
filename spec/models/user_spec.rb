@@ -92,4 +92,11 @@ describe User do
     @user.save!
     User.authenticate('joseph', 'badpassword').should be_nil
   end
+
+  # test for has_many relationship  with role_tags
+ it "should have associated role_tags method" do
+    @user.attributes = valid_user_attributes
+    @user.save!
+    @user.should respond_to('role_tags')
+  end
 end

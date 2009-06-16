@@ -20,8 +20,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
-  config.gem "cucumber", :lib => false
-  config.gem "webrat", :lib => false
+  config.gem "cucumber", :version => '0.3.11', :lib => false
+  config.gem "webrat", :version => '0.4.4', :lib => false
   config.gem "rspec", :version => '1.2.6', :lib => false
   config.gem "rspec-rails", :version => '1.2.6', :lib => false
 
