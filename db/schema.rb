@@ -9,10 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090603225231) do
+ActiveRecord::Schema.define(:version => 20090615232246) do
 
   create_table "questions", :force => true do |t|
     t.string   "question_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "role_tags", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "role_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
