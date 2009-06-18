@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   before_save :prepare_password
 
   has_many :role_tags
+  has_many :quizzes
   
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true

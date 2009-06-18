@@ -1,0 +1,11 @@
+%h1 Editing quiz
+
+= error_messages_for :quiz
+
+- form_for(@quiz) do |f|
+    
+  %p= f.submit "Update"
+  
+= link_to 'Show', quiz_path(@quiz)
+= link_to 'Back', quizzes_path
+

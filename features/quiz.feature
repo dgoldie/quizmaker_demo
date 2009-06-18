@@ -7,7 +7,7 @@ Feature: Quiz Creation
 
   Scenario: For an Author, he can create a Quiz
     Given a user tagged as author
-    When he creates a Quiz
+    When he creates a Quiz named Dummy
     Then he gets Quiz show page
     And the name of the Quiz is displayed
     And gets a notice that the Quiz does not have any questions
