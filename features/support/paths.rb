@@ -10,6 +10,8 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+    when /quiz_path\(1\)/i
+      '/quizzes/1'
     
     # Add more mappings here.
     # Here is a more fancy example:

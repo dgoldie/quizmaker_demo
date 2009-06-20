@@ -6,15 +6,11 @@ Given /^a user tagged as author$/ do
   @user.tag_as_author
 end
 
-When /^he creates a Quiz named Dummy$/ do
+When /^I create a Quiz named Dummy$/ do
   visit quizzes_path
   click_link "Add Quiz"
   fill_in "name" , :with => "Dummy"
   click_button "Save"
-end
-
-Then /^he gets Quiz show page$/ do
-  pending
 end
 
 Then /^the name of the Quiz is displayed$/ do
