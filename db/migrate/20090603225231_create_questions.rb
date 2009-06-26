@@ -1,6 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
+      t.integer :quiz_id
       t.string :question_text
 
       t.timestamps

@@ -1,13 +1,4 @@
 %h1 New quiz
-
-= error_messages_for :quiz 
-
-- form_for(@quiz) do |f| 
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.submit "Save"
-    
-= link_to 'Back', quizzes_path 
+= render :partial => 'form', :object => @quiz
+%p 
+  = link_to 'Back', quizzes_path

@@ -1,4 +1,4 @@
-Given /^a user tagged as author$/ do
+Given /^a user exists tagged as author$/ do
   @user = User.create!(:username => 'dummy', 
                        :email => 'dummy@example.com',
                        :password => 'password', 
@@ -13,20 +13,18 @@ When /^I create a Quiz named Dummy$/ do
   click_button "Save"
 end
 
-Then /^the name of the Quiz is displayed$/ do
-  pending
+Then /^I should see a link "([^\"]*)"$/ do | link |
+  assert_have_selector "a", :href => "/questions/new"
 end
 
-Then /^gets a notice that the Quiz does not have any questions$/ do
-  pending
+Given /^a quiz exists named "([^\"]*)"$/ do |name|
+  Quiz.create!(:user => @user, :name => name)
 end
 
-Then /^gets form to create Questions$/ do
-  pending
-end
-
-Given /^a Quiz$/ do
-  pending
+When /^I add a question "([^\"]*)"$/ do |ask|
+  visit new_question_path
+  fill_in "question_question_text", ask
+  click_button "Create"
 end
 
 When /^he adds a question$/ do

@@ -1,0 +1,9 @@
+= quiz_form.fields_for :questions do |question_form|
+  %p
+    Question:
+    = question_form.text_field :question_text
+    -# unless question_form.object.new_record?
+      =# question_form.label :_delete, 'Remove:'
+      =# question_form.check_box :_delete
+
+

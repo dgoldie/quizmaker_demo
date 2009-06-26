@@ -1,0 +1,14 @@
+= error_messages_for :quiz
+
+- form_for(@quiz) do |quiz_form|
+  %p
+    = quiz_form.label :name
+    %br
+      = quiz_form.text_field :name
+  #questions
+    = render :partial => 'question', :collection => @quiz.questions, |
+                                     :locals => {:quiz_form => quiz_form} |
+  %p
+    = add_question_link "Add a question", quiz_form
+  %p
+    = quiz_form.submit "Save"

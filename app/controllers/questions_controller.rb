@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         flash[:notice] = 'Question was successfully created.'
-        format.html { redirect_to(@question) }
+        format.html { redirect_to question_path(@question) }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
         format.html { render :action => "new" }
