@@ -2,9 +2,12 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= h(yield(:title) || "Untitled") %></title>
+    <title><%= h(yield(:title) || "Quzimaker Demo") %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript :defaults %>
+    <% javascript_tag do %>
+      <%= yield(:jstemplates) %>
+    <% end -%>
     <%= yield(:head) %>
   </head>
   <body>

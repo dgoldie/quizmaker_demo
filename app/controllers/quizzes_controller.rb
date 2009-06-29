@@ -25,7 +25,6 @@ class QuizzesController < ApplicationController
   # GET /Quiz/new.xml
   def new
     @quiz = Quiz.new
-    @quiz.questions.build
 
     respond_to do |format|
       format.html # new.haml

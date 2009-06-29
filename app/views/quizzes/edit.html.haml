@@ -1,6 +1,20 @@
 %h1 Editing quiz
+= error_messages_for :quiz
 
-= render :partial => 'form'
+- form_for( setup_quiz(@quiz) ) do |f|
+  - content_for :jstemplates do
+    = "var question='#{ generate_template(f, :questions)}'"
+  %p
+    = f.label :name
+    %br
+      = f.text_field :name
+  #questions
+    - f.fields_for :questions do |nf|
+      = render :partial => 'question', :locals => { :f => nf }
+  %p
+    =link_to_function "Add a question", "newQuestion()"
+  %p
+    = f.submit "Save"
   
 = link_to 'Show', quiz_path(@quiz)
 = link_to 'Back', quizzes_path
