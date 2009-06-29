@@ -10,7 +10,6 @@ When /^I create a Quiz named Dummy$/ do
   visit quizzes_path
   click_link "Add Quiz"
   fill_in "name" , :with => "Dummy"
-  click_button "Save"
 end
 
 Then /^I should see a link "([^\"]*)"$/ do | link |
@@ -23,8 +22,12 @@ end
 
 When /^I add a question "([^\"]*)"$/ do |ask|
   visit new_question_path
-  fill_in "question_question_text", ask
-  click_button "Create"
+  assert_have_selector 'p.question:first-of-type'
+
+  within "p.question:first-of-type" do |scope|
+    scope.fill_in "*question_text", ask
+  end
+
 end
 
 When /^he adds a question$/ do
