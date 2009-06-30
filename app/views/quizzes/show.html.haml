@@ -4,7 +4,8 @@
 - if !@quiz.questions.empty?
   -for question in @quiz.questions do
     %p
-      = "#{question.id}.  "
+      %span
+        =@question_counter
       = question.question_text
 - else
   %p

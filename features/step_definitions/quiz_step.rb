@@ -17,9 +17,13 @@ Given /^a quiz exists named "([^\"]*)"$/ do |name|
 end
 
 When /^I add a question "([^\"]*)"$/ do |ask|
+#  assert_have_selector "quiz_questions_attributes_0_question_text"
+#  assert_have_selector "p.quesssstion"
+#  fill_in "quiz_questions_attributes_0_question_text", ask
   within "p.question:first-of-type" do |scope|
-    scope.fill_in /quiz.*question_text/, ask
+    scope.fill_in /quiz_questions_attributes_.*_question_text/, :with => ask
   end
+
 end
 
 When /^he adds a question$/ do
