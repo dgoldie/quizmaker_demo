@@ -1,0 +1,7 @@
+    --- !ruby/object:Gem::Specification 
+    name: rails
+    version: !ruby/object:Gem::Version 
+      version: 2.3.2
+    require_paths:
+    - lib
+    platform: ruby
