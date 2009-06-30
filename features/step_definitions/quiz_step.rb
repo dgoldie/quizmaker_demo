@@ -12,22 +12,14 @@ When /^I create a Quiz named Dummy$/ do
   fill_in "name" , :with => "Dummy"
 end
 
-Then /^I should see a link "([^\"]*)"$/ do | link |
-  assert_have_selector "a", :href => "/questions/new"
-end
-
 Given /^a quiz exists named "([^\"]*)"$/ do |name|
   Quiz.create!(:user => @user, :name => name)
 end
 
 When /^I add a question "([^\"]*)"$/ do |ask|
-  visit new_question_path
-  assert_have_selector 'p.question:first-of-type'
-
   within "p.question:first-of-type" do |scope|
-    scope.fill_in "*question_text", ask
+    scope.fill_in /quiz.*question_text/, ask
   end
-
 end
 
 When /^he adds a question$/ do
