@@ -1,15 +1,10 @@
 %h2
   = h @quiz.name
-
 - if !@quiz.questions.empty?
-  -for question in @quiz.questions do
-    %p
-      %span
-        =@question_counter
-      = question.question_text
+  - for question in @quiz.questions do
+    %p=question.question_text
 - else
-  %p
-    "This quiz does not have any questions yet"
+  %p "This quiz does not have any questions yet"
   
 = link_to 'Edit', edit_quiz_path(@quiz)
 = link_to 'Back', quizzes_path

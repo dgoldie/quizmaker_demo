@@ -20,4 +20,3 @@ Feature: Quiz Creation
     And I press "Save"
     Then I should be on quiz_path(1)
     And I should see "What is your favorite color?"
-    And I should see "Total Questions: 1"
