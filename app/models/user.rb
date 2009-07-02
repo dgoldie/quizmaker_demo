@@ -20,7 +20,10 @@ class User < ActiveRecord::Base
    def tag_as_author
      self.role_tags << RoleTag.create!(:user => self, :role_name => 'author')	
    end
-  
+
+   def tag_as_student
+     self.role_tags << RoleTag.create!(:user => self, :role_name => 'student')
+   end
   
   
   

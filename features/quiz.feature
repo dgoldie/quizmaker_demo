@@ -12,7 +12,8 @@ Feature: Quiz Creation
     Then I should be on quiz_path(1)
     And I should see "Quiz was successfully created"
     And I should see "This quiz does not have any questions yet"
-    
+    And the page is valid XHTML
+
   Scenario: For an Author, he can create a Quiz with Questions
     Given a user exists tagged as author
     When I create a Quiz named Dummy
@@ -20,3 +21,5 @@ Feature: Quiz Creation
     And I press "Save"
     Then I should be on quiz_path(1)
     And I should see "What is your favorite color?"
+
+    

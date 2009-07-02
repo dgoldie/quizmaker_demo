@@ -15,3 +15,5 @@ end
 
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
+require "markup_validity" if ENV["VALIDATION"]
+
