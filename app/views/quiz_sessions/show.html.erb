@@ -1,0 +1,5 @@
+<p>Quiz: <%= @quiz_session.quiz.name %></p>
+<p>User: <%= @quiz_session.user.username %></p>
+
+<%= link_to 'Edit', edit_quiz_session_path(@quiz_session) %> |
+<%= link_to 'Back', quiz_sessions_path %>

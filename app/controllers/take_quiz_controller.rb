@@ -4,6 +4,7 @@ class TakeQuizController < ApplicationController
     login_required
     @current_user = current_user
     @quiz = Quiz.find(params[:id])
+
   end
 
   def create

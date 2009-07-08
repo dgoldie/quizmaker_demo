@@ -1,0 +1,16 @@
+<h1>Listing quiz_sessions</h1>
+<table>
+<% @quiz_sessions.each do |quiz_session| %>
+  <tr>
+    <td><%= quiz_session.user.username %></td>
+    <td><%= quiz_session.quiz.name %></td>
+    <td><%= link_to 'Show', quiz_session %></td>
+    <td><%= link_to 'Edit', edit_quiz_session_path(quiz_session) %></td>
+    <td><%= link_to 'Destroy', quiz_session, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quiz_session', new_quiz_session_path %>

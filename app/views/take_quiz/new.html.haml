@@ -1,18 +1,17 @@
 %h1 Take quiz
-= error_messages_for :quiz
-  %h2= @quiz.name
+%h3= "Name: #{@quiz.name}"
+%h4 Questions:
+- form_for :quiz, @quiz, :url => { :action => "create" } do |f|
+  %table
+    - for question in @quiz.questions
+      %tr
+        %td=question.id
+        %td=question.question_text
+        %td= f.textfield :answer[question.id]
 
-- form_for @quiz.questions, :url => {:action => 'create'} do |f|
-  %p
-    = f.label :name
-    %br
-      = f.text_field :name
-  #questions
-    - f.fields_for :questions do |nf|
-      = render :partial => 'question', :locals => { :f => nf }
-  %p
-    =link_to_function "Add a question", "newQuestion()"
-  %p
-    = f.submit "Save"
-%p
-  = link_to 'Back', quizzes_path
+
+
+
+
+
+      

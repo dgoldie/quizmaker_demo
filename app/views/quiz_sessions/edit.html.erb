@@ -1,0 +1,12 @@
+<h1>Editing quiz_session</h1>
+
+<% form_for(@quiz_session) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @quiz_session %> |
+<%= link_to 'Back', quiz_sessions_path %>

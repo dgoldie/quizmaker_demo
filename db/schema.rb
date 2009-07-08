@@ -9,11 +9,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090617223846) do
+ActiveRecord::Schema.define(:version => 20090706230053) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "quiz_session_id"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "questions", :force => true do |t|
     t.integer  "quiz_id"
     t.string   "question_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quiz_sessions", :force => true do |t|
+    t.integer  "quiz_id"
+    t.integer  "user_id"
+    t.integer  "quiz_state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quiz_states", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

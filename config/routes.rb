@@ -1,7 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :quiz_sessions
+
   map.resources :quizzes
 
   map.resources :questions
+  map.take_quiz 'take_quiz/:id', :controller => 'take_quiz', :action => 'new'
 
   map.signup 'signup', :controller => 'users', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
