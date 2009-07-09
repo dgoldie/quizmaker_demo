@@ -1,4 +1,6 @@
 class QuizzesController < ApplicationController
+   before_filter :login_required, :except => [:index, :show]
+
   # GET /Quiz
   # GET /Quiz.xml
   def index
@@ -25,7 +27,8 @@ class QuizzesController < ApplicationController
   # GET /Quiz/new.xml
   def new
     @quiz = Quiz.new
-
+    @questions = @quiz.questions
+    
     respond_to do |format|
       format.html # new.haml
       format.xml  { render :xml => @quiz }
@@ -41,6 +44,7 @@ class QuizzesController < ApplicationController
   # POST /Quiz.xml
   def create
     @quiz = Quiz.new(params[:quiz])
+    @quiz.user = current_user
 
     respond_to do |format|
       if @quiz.save

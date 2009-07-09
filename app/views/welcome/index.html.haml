@@ -13,3 +13,18 @@
 %ul
   %li
     = link_to "Quizzes", quizzes_path
+  %li
+    = link_to "Questions", questions_path
+  %li
+    = link_to "Quiz Session", quiz_sessions_path
+
+
+- if logged_in?
+  %h3 Assigned Tests
+  - if current_user.quiz_sessions
+    %ul
+    - for session in current_user.quiz_sessions
+      %li
+        =link_to session.quiz.name, take_quiz_path(session.quiz.id)
+  - else
+    %p No tests assigned yet.

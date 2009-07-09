@@ -2,7 +2,14 @@
 
 <% form_for(@quiz_session) do |f| %>
   <%= f.error_messages %>
-
+  <p>
+    <%= label :quiz_session, :user, 'Select User' %>
+    <%= f.collection_select( :user_id, User.all, :id, :username) %>
+  </p>
+  <p>
+    <%= label :quiz_session, :quiz, 'Select Quiz' %>
+    <%= f.collection_select( :quiz_id, Quiz.all, :id, :name) %>
+  </p>
   <p>
     <%= f.submit 'Update' %>
   </p>

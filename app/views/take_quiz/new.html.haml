@@ -3,11 +3,14 @@
 %h4 Questions:
 - form_for :quiz, @quiz, :url => { :action => "create" } do |f|
   %table
-    - for question in @quiz.questions
+    - @questions.each do |question|
       %tr
         %td=question.id
         %td=question.question_text
-        %td= f.textfield :answer[question.id]
+        %td
+           = f.fields_for :answers, ans do |ans_form| |
+             ans_form.text_field :value, :label => 'value'
+
 
 
 

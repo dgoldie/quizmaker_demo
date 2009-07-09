@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :role_tags
   has_many :quizzes
   has_many :quiz_sessions
+  has_many :answers
+
   
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :allow_blank => true

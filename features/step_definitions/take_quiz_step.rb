@@ -12,7 +12,7 @@ Given /^a quiz named "([^\"]*)" with a question "([^\"]*)"$/ do |name, question|
 end
 
 When /^I take the quiz and give the answer "([^\"]*)"$/ do |answer|
-  visit new_take_quiz_path(1)
+  visit take_quiz_path(1)
   fill_in "answer_text", :with => answer
   click_button 'Save'
 end

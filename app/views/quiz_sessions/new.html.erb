@@ -4,11 +4,11 @@
   <%= f.error_messages %>
   <p>
     <%= label :quiz_session, :user, 'Select User' %>
-    <%= collection_select(:quiz_session, :user_id, User.all, :id, :username) %>
+    <%= f.collection_select(:user_id, User.all, :id, :username) %>
   </p>
   <p>
     <%= label :quiz_session, :quiz, 'Select Quiz' %>
-    <%= collection_select(:quiz_session, :quiz_id, Quiz.all, :id, :name) %>
+    <%= f.collection_select(:quiz_id, Quiz.all, :id, :name) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
