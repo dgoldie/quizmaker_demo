@@ -15,6 +15,11 @@
 #   http://github.com/rails/rails/commit/9010ed27559ed5ab89ea71b4b16f4c8e56d03dbb
 #   ????
 #   in any case, I just gave the proc here and it works fine.
+#
+#      t.integer :user_id
+#      t.string :name
+#
+#
 
 class Quiz < ActiveRecord::Base
   has_many :questions

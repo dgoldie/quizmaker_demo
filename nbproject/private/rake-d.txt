@@ -3,6 +3,13 @@ db\:charset=Retrieves the charset for the current environment's database
 db\:collation=Retrieves the collation for the current environment's database
 db\:create=Create the database defined in config/database.yml for the current RAILS_ENV
 db\:create\:all=Create all the local databases defined in config/database.yml
+db\:dataset\:clobber=Cleans up all dataset information in db/dataset. Specify DATASET=x and the entire db/dataset/x directory will be deleted.
+db\:dataset\:dump=Dump a SQL dataset from the current environment's database into db/dataset/dataset.sql. Specify DATASET=x to use db/dataset/x/dataset.sql instead.
+db\:dataset\:dump_fixtures=Dump a dataset from the current environment's database into db/dataset. Specify DATASET=x to use db/dataset/x instead. Specify INCLUDE=Model1,Model2,Model3 to dump only certain model classes
+db\:dataset\:load=Load one or more datasets into the current environment's database using DATASETS=name,name
+db\:dataset\:load_fixtures=Load a dataset into the current environment's database from db/dataset. Specify DATASET=x to use db/dataset/x instead.
+db\:dataset\:load_sql=Load a SQL dataset into the current environment's database from db/dataset. Specify DATASET=x to use db/dataset/x instead.
+db\:dataset\:migrate=Migrate a SQL dataset to the latest schema version.  You may specify a DATASET environment variable. This task always executes in the 'test' environment.
 db\:drop=Drops the database for the current RAILS_ENV
 db\:drop\:all=Drops all the local databases defined in config/database.yml
 db\:fixtures\:identify=Search for a fixture given a LABEL or ID. Specify an alternative path (eg. spec/fixtures) using FIXTURES_PATH=spec/fixtures.
@@ -39,6 +46,7 @@ doc\:clobber_plugins=Remove plugin documentation
 doc\:clobber_rails=Remove rdoc products
 doc\:guides=Generate Rails guides
 doc\:plugins=Generate documentation for all installed plugins
+doc\:plugins\:dataset=Generate documentation for the dataset plugin
 doc\:plugins\:haml=Generate documentation for the haml plugin
 doc\:plugins\:rspec_haml_scaffold_generator=Generate documentation for the rspec_haml_scaffold_generator plugin
 doc\:rails=Build the RDOC HTML Files

@@ -2,11 +2,17 @@
 # from the project root directory.
 ENV["RAILS_ENV"] = 'test'
 require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
+
+#require File.expand_path(File.dirname(__FILE__) + "/blueprints")
 require 'spec/autorun'
 require 'spec/rails'
-
 require 'webrat'
 
+require 'dataset'
+class Test::Unit::TestCase
+  include Dataset
+  datasets_directory "#{RAILS_ROOT}/spec/datasets"
+end
 
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
@@ -26,7 +32,11 @@ Spec::Runner.configure do |config|
   # You can declare fixtures for each example_group like this:
   #   describe "...." do
   #     fixtures :table_a, :table_b
-  #
+
+  config.before(:all)    { Sham.reset(:before_all)  }
+  config.before(:each)   { Sham.reset(:before_each) }
+
+
   # Alternatively, if you prefer to declare them only once, you can
   # do so right here. Just uncomment the next line and replace the fixture
   # names with your fixtures.

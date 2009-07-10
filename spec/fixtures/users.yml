@@ -1,0 +1,41 @@
+# change these values below
+# password = password
+#      t.column :username,      :string
+#      t.column :email,         :string
+#      t.column :password_hash, :string
+#      t.column :password_salt, :string
+
+doug:
+  id: 1
+  username: doug
+  email: dgoldie@gmail.com
+  password_hash: 3252d2eb62426c604de89906ad21f8c897fa2b89
+  password_salt: 0fba728a73b0975078ebaa64badfc6d5f82d5a25
+
+moe:
+  id: 2
+  username: moe
+  email: moe@stooges.com
+  password_hash: 3252d2eb62426c604de89906ad21f8c897fa2b89
+  password_salt: 0fba728a73b0975078ebaa64badfc6d5f82d5a25
+
+curly:
+  id: 3
+  username: curly
+  email: curly@stooges.com
+  password_hash: 3252d2eb62426c604de89906ad21f8c897fa2b89
+  password_salt: 0fba728a73b0975078ebaa64badfc6d5f82d5a25
+
+larry:
+  id: 4
+  username: larry
+  email: larry@stooges.com
+  password_hash: 3252d2eb62426c604de89906ad21f8c897fa2b89
+  password_salt: 0fba728a73b0975078ebaa64badfc6d5f82d5a25
+
+dan:
+  id: 5
+  username: dan
+  email: dan@bikle.com
+  password_hash: bb49990efe3fab3d450032cbabc1111a2df165e2
+  password_salt: 61d1bbf8ca6d055997513b3785a819f21a57dc72

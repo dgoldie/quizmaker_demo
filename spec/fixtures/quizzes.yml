@@ -2,8 +2,12 @@
 
 one:
   user_id: 1
-  name: MyString
+  name: Basic Quiz
 
 two:
   user_id: 1
-  name: MyString
+  name: Tough Quiz
+
+three:
+  user_id: 2
+  name: Easy Quiz
