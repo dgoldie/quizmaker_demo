@@ -12,6 +12,8 @@ class UsersDataset < Dataset::Base
     create_user "curly"
     create_user "larry"
     create_user "moe"
+    create_user "doug", { :email => "dgoldie@gmail.com"}
+    create_user "dan", { :email => "dan@bikle.com"}
   end
 
   helpers do

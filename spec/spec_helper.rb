@@ -33,8 +33,8 @@ Spec::Runner.configure do |config|
   #   describe "...." do
   #     fixtures :table_a, :table_b
 
-  config.before(:all)    { Sham.reset(:before_all)  }
-  config.before(:each)   { Sham.reset(:before_each) }
+  #config.before(:all)    { Sham.reset(:before_all)  }
+  #config.before(:each)   { Sham.reset(:before_each) }
 
 
   # Alternatively, if you prefer to declare them only once, you can
